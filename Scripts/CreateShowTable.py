@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("C:\ShowApp\Databases\TopShows.db")
+conn = sqlite3.connect("../Databases/TopShows.db")
 c = conn.cursor()
 
 c.execute("DROP TABLE IF EXISTS TopShows")
