@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("../Databases/TopShows.db")
+conn = sqlite3.connect("/home/pi/pishared/ShowApp/Databases/TopShows.db")
 c = conn.cursor()
 
 c.execute("DROP TABLE IF EXISTS Episodes")
