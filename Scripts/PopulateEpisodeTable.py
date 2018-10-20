@@ -2,9 +2,10 @@ import urllib.request
 import sqlite3
 from bs4 import BeautifulSoup
 import re
+import time
 
 #Open connection to sqlite database
-showconn = sqlite3.connect("C:\ShowApp\Databases\TopShows.db")
+showconn = sqlite3.connect("../Databases/TopShows.db")
 showc = showconn.cursor()
 
 #Get show title names from TopShows table
@@ -19,7 +20,7 @@ for showtitle in showtitles:
     formattedtitle = showtitle.replace(' ','_')
     #print(formattedtitle)
     listofurl = "http://en.wikipedia.org/wiki/List_of_" + formattedtitle + "_episodes"
-    print(listofurl)
+    #print(listofurl)
     try:
         HTML = urllib.request.urlopen(listofurl).read()
         source = "listof"
@@ -66,6 +67,7 @@ for showtitle in showtitles:
                 #print(seasonnumber)
                 #print(numinseason)
                 #print(epname)
+    time.sleep(1)
 
 showconn.commit()
 showconn.close()
