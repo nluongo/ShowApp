@@ -2,3 +2,4 @@ __pycache__
 Databases/Logins.txt
 .idea
 venv
+Databases/*
